@@ -160,24 +160,27 @@ html {
 	margin: 6em 0;
 	padding: 6em 0;
 	background-color: $header-bg;
-	&-title {
-		font-size: 3.6rem;
-		font-weight: bold;
-		padding-bottom: 0.5em;
+	&-left {
+		&-title {
+			font-size: 3.6rem;
+			font-weight: bold;
+			padding-bottom: 0.5em;
+		}
+		&-img {
+			background-image: url('../img/dataVisualization.jpg');
+			width: 100%;
+			height: 200px;
+			background-size: cover;
+			background-position: center;
+		}
 	}
-	&-img {
-		background-image: url('../img/dataVisualization.jpg');
-		width: 100%;
-		height: 200px;
-		background-size: cover;
-		background-position: center;
-	}
-	&-box {
+
+	&-right {
 		display: flex;
 		flex-direction: column;
 	}
 	&-item {
-		padding: 4em 0;
+		padding: 2em 0;
 		&-title {
 			padding: 0.8em 0;
 			font-size: 2.4rem;
@@ -186,6 +189,41 @@ html {
 		}
 		&-desc {
 			font-size: 2rem;
+		}
+	}
+}
+
+.one-solutions {
+	color: $black-text;
+	text-align: center;
+	&-box {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-left {
+		margin-bottom: 2em;
+		&-title {
+			font-size: 3rem;
+			margin-bottom: 1em;
+			color: $btn-color;
+			font-weight: bold;
+		}
+
+		&-desc {
+			margin-bottom: 1em;
+			font-size: 2.2rem;
+			font-weight: 500;
+		}
+	}
+	&-right {
+		margin: 1.5em 0;
+		&-img {
+			background-image: url('../img/one-solutions.webp');
+			width: 100%;
+			height: 300px;
+			background-size: cover;
+			background-position: center;
 		}
 	}
 }
@@ -257,6 +295,43 @@ html {
 			}
 		}
 	}
+	.visualizations {
+		padding: 9em 0;
+		&-left {
+			&-title {
+				font-size: 5.6rem;
+			}
+			&-img {
+				height: 420px;
+			}
+		}
+
+		&-right {
+			flex-direction: row;
+		}
+		&-item {
+			&-desc {
+				margin: 0 2em;
+			}
+			.link {
+				margin: 0 2.3em;
+			}
+
+			&:first-of-type {
+				padding-right: 4em;
+			}
+		}
+	}
+	.one-solutions {
+		&-right {
+			&-img {
+				width: 100%;
+				height: 400px;
+				background-size: cover;
+				background-position: center;
+			}
+		}
+	}
 }
 // Laptops / Desktops
 @media (min-width: 992px) {
@@ -277,13 +352,64 @@ html {
 			height: 500px;
 			width: 50%;
 		}
-
 		&-squares {
 			margin-left: 2em;
-
 			&__one,
 			&__two {
 				margin: 0;
+			}
+		}
+	}
+	.visualizations {
+		&-mainbox {
+			display: flex;
+			flex-direction: row;
+		}
+
+		&-left {
+			width: 100%;
+		}
+
+		&-right {
+			flex-direction: column;
+		}
+
+		&-item {
+			margin-left: 5em;
+			padding: 0;
+			&:first-of-type {
+				padding-right: 0;
+				margin-bottom: 7em;
+				margin-top: -1em;
+			}
+		}
+	}
+	.one-solutions {
+		text-align: start;
+		&-box {
+			margin: 10em 0;
+			flex-direction: row;
+		}
+		&-left {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			width: 30%;
+			&-title {
+				font-size: 4.8rem;
+			}
+			a {
+				margin-right: 2em;
+			}
+		}
+		&-right {
+			margin: 1.5em 0;
+			width: 70%;
+			&-img {
+				background-image: url('../img/one-solutions.webp');
+				height: 400px;
+				background-size: cover;
+				background-position: center;
 			}
 		}
 	}
