@@ -172,6 +172,7 @@ html {
 			height: 200px;
 			background-size: cover;
 			background-position: center;
+			border-radius: 3px;
 		}
 	}
 
@@ -224,6 +225,79 @@ html {
 			height: 300px;
 			background-size: cover;
 			background-position: center;
+		}
+	}
+}
+
+.contact {
+	background-color: $header-bg;
+	text-align: center;
+
+	&-title {
+		padding: 2.3em 0 0.6em;
+		font-size: 3rem;
+	}
+	&-desc {
+		margin-bottom: 1.5em;
+		font-size: 2rem;
+	}
+	&-box {
+		padding-bottom: 5em;
+		display: flex;
+		flex-direction: column;
+		&-card {
+			margin: 1.3em;
+			background-color: $white;
+			height: 245px;
+			color: $black-text;
+		}
+	}
+	.card {
+		&-icon {
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 3px solid $dark-white;
+			border-radius: 255px;
+			width: 80px;
+			height: 80px;
+			padding: 2em;
+			margin: 2em auto;
+			i {
+				font-size: 3rem;
+				color: $dark-gray;
+			}
+		}
+		&-text {
+			display: flex;
+			flex-direction: column;
+			a {
+				color: $black-text;
+				text-decoration: none;
+				font-size: 1.7rem;
+			}
+			&-title {
+				color: $dark-gray;
+				font-weight: bold;
+				font-size: 2rem;
+			}
+
+			.email {
+				transition: color 0.3s;
+				&:hover {
+					color: $gray;
+				}
+			}
+
+			&-desc {
+				margin: 0;
+				padding: 0 2em;
+				font-size: 1.7rem;
+				&:first-of-type {
+					padding-top: 1em;
+				}
+			}
 		}
 	}
 }
@@ -332,6 +406,15 @@ html {
 			}
 		}
 	}
+	.contact {
+		&-box {
+			display: inline-block;
+			&-card {
+				display: inline-block;
+				width: 40%;
+			}
+		}
+	}
 }
 // Laptops / Desktops
 @media (min-width: 992px) {
@@ -410,6 +493,13 @@ html {
 				height: 400px;
 				background-size: cover;
 				background-position: center;
+			}
+		}
+	}
+	.contact {
+		&-box {
+			&-card {
+				width: 30%;
 			}
 		}
 	}
