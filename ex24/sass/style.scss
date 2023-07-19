@@ -1,0 +1,294 @@
+// USE & FORWARD
+@use './colors' as *;
+@use './components' as *;
+
+// RESET
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+
+	body {
+		font-family: 'Barlow', sans-serif;
+		color: $light-white;
+	}
+}
+
+// MAIN CLASSES
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1em;
+	max-width: 1200px;
+}
+
+.btn-read-more {
+	padding: 0.7em 3.5em;
+	text-align: center;
+	text-transform: uppercase;
+	color: $light-white;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: $btn-color;
+	border-radius: 50px;
+	font-size: 1.6rem;
+	letter-spacing: 2px;
+	&:hover {
+		background-color: $btn-color-hover;
+		color: $dark-white;
+	}
+}
+
+// HEADER
+.header {
+	background-color: $header-bg;
+	&-body {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 5em 0 2em;
+		&-text {
+			h1 {
+				font-size: 3.5rem;
+				font-weight: bold;
+			}
+
+			p {
+				padding: 1.5em 0;
+				font-size: 1.945rem;
+			}
+		}
+		&-img {
+			margin: 3.2em 0 2em;
+			background-image: url('../img/header-img.svg');
+			width: 250px;
+			height: 250px;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+}
+
+// MAIN
+.features {
+	&-title,
+	&-desc {
+		color: $black-text;
+		text-align: center;
+	}
+	&-title {
+		margin: 2em 0 0.5em;
+		font-size: 2.8rem;
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+
+	&-desc {
+		margin-bottom: 2em;
+		font-size: 1.8rem;
+	}
+	&-info {
+		// Squares class
+		font-size: 2.4rem;
+		margin-top: 1em;
+	}
+	&-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	&-img {
+		background-image: url('../img/features.jpg');
+		height: 300px;
+		width: 100%;
+		background-size: cover;
+		background-position: center;
+		border-radius: 3px;
+	}
+	&-squares {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		text-align: center;
+		i {
+			font-size: 5rem;
+			font-weight: 600;
+		}
+		&__one,
+		&__two,
+		&__three,
+		&__four {
+			width: 100%;
+			padding: 5.8em;
+			margin-top: 2em;
+			transition: scale 0.3s;
+			border-radius: 3px;
+			&:hover {
+				scale: 1.05;
+			}
+		}
+		&__one {
+			background-color: $one-bg;
+			border: 2px solid $one-border;
+		}
+
+		&__two {
+			background-color: $two-bg;
+			border: 2px solid $two-border;
+		}
+
+		&__three {
+			background-color: $three-bg;
+			border: 2px solid $three-border;
+		}
+
+		&__four {
+			background-color: $four-bg;
+			border: 2px solid $four-border;
+		}
+	}
+}
+
+.visualizations {
+	margin: 6em 0;
+	padding: 6em 0;
+	background-color: $header-bg;
+	&-title {
+		font-size: 3.6rem;
+		font-weight: bold;
+		padding-bottom: 0.5em;
+	}
+	&-img {
+		background-image: url('../img/dataVisualization.jpg');
+		width: 100%;
+		height: 200px;
+		background-size: cover;
+		background-position: center;
+	}
+	&-box {
+		display: flex;
+		flex-direction: column;
+	}
+	&-item {
+		padding: 4em 0;
+		&-title {
+			padding: 0.8em 0;
+			font-size: 2.4rem;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		&-desc {
+			font-size: 2rem;
+		}
+	}
+}
+
+// BREAKPOINTS
+// Phones
+@media (min-width: 576px) {
+	.header {
+		&-body {
+			&-img {
+				width: 300px;
+				height: 300px;
+			}
+		}
+	}
+
+	.features {
+		&-squares {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			&__one,
+			&__two,
+			&__three,
+			&__four {
+				&:hover {
+					scale: 1.07;
+				}
+			}
+
+			&__two,
+			&__three {
+				flex-basis: calc(50% - 1em);
+			}
+		}
+	}
+}
+// Tablets
+@media (min-width: 768px) {
+	.header {
+		&-body {
+			flex-direction: row;
+			&-text {
+				width: 50%;
+			}
+			&-img {
+				width: 330px;
+				height: 330px;
+			}
+		}
+	}
+	.features {
+		&-squares {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			&__one,
+			&__two,
+			&__three,
+			&__four {
+				flex-basis: calc(50% - 1em);
+				&:hover {
+					scale: 1.06;
+				}
+			}
+		}
+	}
+}
+// Laptops / Desktops
+@media (min-width: 992px) {
+	.header {
+		&-body {
+			&-img {
+				margin-left: 5em;
+				width: 330px;
+				height: 330px;
+			}
+		}
+	}
+	.features {
+		&-box {
+			flex-direction: row;
+		}
+		&-img {
+			height: 500px;
+			width: 50%;
+		}
+
+		&-squares {
+			margin-left: 2em;
+
+			&__one,
+			&__two {
+				margin: 0;
+			}
+		}
+	}
+}
+
+// Desktops
+@media (min-width: 1200px) {
+}
